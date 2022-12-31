@@ -41,7 +41,6 @@ app.get("/meals", async (req, res) => {
 app.get("/meals/:category", async (req, res) => {
   try {
     const query = { category: req.params.category };
-    console.log(query);
     const data = await dataCollection.find(query).toArray();
     res.status(200).send({ status: true, data });
   } catch (error) {
@@ -51,7 +50,6 @@ app.get("/meals/:category", async (req, res) => {
 app.get("/meal/:id", async (req, res) => {
   try {
     const query = { _id: ObjectId(req.params.id) };
-    console.log(query);
     const data = await dataCollection.findOne(query);
     res.status(200).send({ status: true, data });
   } catch (error) {
