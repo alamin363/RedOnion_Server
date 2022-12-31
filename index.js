@@ -46,7 +46,8 @@ app.get("/meals/:category", async (req, res) => {
   } catch (error) {
     res.status(401).send({ status: false, message: error.message });
   }
-});
+})
+
 app.get("/meal/:id", async (req, res) => {
   try {
     const query = { _id: ObjectId(req.params.id) };
